@@ -1,0 +1,60 @@
+[
+  {
+    "id": "p1",
+    "year": "2025",
+    "firstName": "David",
+    "lastName": "Smith",
+    "photo": "https://i.pravatar.cc/160?img=12",
+    "role": "Senior Software Engineer",
+    "department": "PL.U2.D3.G2",
+    "title": "Senior Software Engineer (PL.U2.D3.G2)"
+  },
+  {
+    "id": "p2",
+    "year": "2025",
+    "firstName": "Alice",
+    "lastName": "Green",
+    "photo": "https://i.pravatar.cc/160?img=5",
+    "role": "Group Manager",
+    "department": "UA.U3.G1",
+    "title": "Group Manager (UA.U3.G1)"
+  },
+  {
+    "id": "p3",
+    "year": "2025",
+    "firstName": "Laura",
+    "lastName": "Reed",
+    "role": "Lead QA Engineer",
+    "department": "PL.U2.D3.G2.T4",
+    "title": "Lead QA Engineer (PL.U2.D3.G2.T4)"
+  },
+  {
+    "id": "p4",
+    "year": "2025",
+    "firstName": "Quinn",
+    "lastName": "Adams",
+    "photo": "https://i.pravatar.cc/160?img=23",
+    "role": "Lead QA Engineer",
+    "department": "PL.U2.D3.G2.T4",
+    "title": "Lead QA Engineer (PL.U2.D3.G2.T4)"
+  },
+  {
+    "id": "p5",
+    "year": "2025",
+    "firstName": "Mia",
+    "lastName": "Johnson",
+    "role": "QA Engineer",
+    "department": "UA.U3.DSE1.T2",
+    "title": "QA Engineer (UA.U3.DSE1.T2)"
+  },
+  {
+    "id": "p6",
+    "year": "2025",
+    "firstName": "Ethan",
+    "lastName": "Nguyen",
+    "photo": "https://i.pravatar.cc/160?img=31",
+    "role": "Software Engineer",
+    "department": "UA.U3.DSE1.T2",
+    "title": "Software Engineer (UA.U3.DSE1.T2)"
+  }
+]

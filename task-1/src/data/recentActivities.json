@@ -1,0 +1,31 @@
+[
+  { "personId": "p1", "year": "2025", "quarter": "Q4", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Executive Public Speaking Workshop - Advanced Storytelling", "date": "2025-12-17", "dateLabel": "17-Dec-2025", "points": 64 },
+  { "personId": "p1", "year": "2025", "quarter": "Q4", "category": "Education", "icon": "🎓", "title": "Persuasive Communication for Technical Leaders", "date": "2025-12-11", "dateLabel": "11-Dec-2025", "points": 32 },
+  { "personId": "p1", "year": "2025", "quarter": "Q4", "category": "University Partnership", "icon": "🎓", "title": "Cross-Department Presentation Masterclass", "date": "2025-12-07", "dateLabel": "07-Dec-2025", "points": 32 },
+  { "personId": "p1", "year": "2025", "quarter": "Q4", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Public Speaking Fundamentals for Engineering Teams", "date": "2025-12-03", "dateLabel": "03-Dec-2025", "points": 16 },
+
+  { "personId": "p2", "year": "2025", "quarter": "Q3", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Advanced Q&A Handling in Stakeholder Meetings", "date": "2025-11-27", "dateLabel": "27-Nov-2025", "points": 16 },
+  { "personId": "p2", "year": "2025", "quarter": "Q3", "category": "Education", "icon": "🎓", "title": "Corporate Stage Presence and Voice Control", "date": "2025-11-20", "dateLabel": "20-Nov-2025", "points": 16 },
+  { "personId": "p2", "year": "2025", "quarter": "Q3", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Building Confidence in High-Impact Presentations", "date": "2025-11-14", "dateLabel": "14-Nov-2025", "points": 8 },
+  { "personId": "p2", "year": "2025", "quarter": "Q3", "category": "University Partnership", "icon": "🎓", "title": "Technical Demo Speaking Clinic", "date": "2025-11-09", "dateLabel": "09-Nov-2025", "points": 8 },
+  { "personId": "p2", "year": "2025", "quarter": "Q3", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Virtual Public Speaking for Distributed Teams", "date": "2025-11-02", "dateLabel": "02-Nov-2025", "points": 8 },
+
+  { "personId": "p3", "year": "2025", "quarter": "Q2", "category": "University Partnership", "icon": "🎓", "title": "Impactful Slide Narration and Delivery", "date": "2025-10-26", "dateLabel": "26-Oct-2025", "points": 8 },
+  { "personId": "p3", "year": "2025", "quarter": "Q2", "category": "Education", "icon": "🎓", "title": "Speaking with Data: Clarity and Persuasion", "date": "2025-10-18", "dateLabel": "18-Oct-2025", "points": 8 },
+  { "personId": "p3", "year": "2025", "quarter": "Q2", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Influential Communication for Senior Engineers", "date": "2025-10-10", "dateLabel": "10-Oct-2025", "points": 8 },
+  { "personId": "p3", "year": "2025", "quarter": "Q2", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Public Speaking Sprint for QA Leads", "date": "2025-10-05", "dateLabel": "05-Oct-2025", "points": 296 },
+
+  { "personId": "p4", "year": "2025", "quarter": "Q1", "category": "University Partnership", "icon": "🎓", "title": "Mentoring Program: University QA Track", "date": "2025-03-11", "dateLabel": "11-Mar-2025", "points": 240 },
+  { "personId": "p4", "year": "2025", "quarter": "Q1", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Internal Workshop: QA Communication", "date": "2025-02-20", "dateLabel": "20-Feb-2025", "points": 80 },
+  { "personId": "p4", "year": "2025", "quarter": "Q2", "category": "Education", "icon": "🎓", "title": "QA Leadership Learning Sprint", "date": "2025-05-19", "dateLabel": "19-May-2025", "points": 42 },
+  { "personId": "p4", "year": "2025", "quarter": "Q3", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Cross-Team Quality Demo Day", "date": "2025-08-14", "dateLabel": "14-Aug-2025", "points": 38 },
+
+  { "personId": "p5", "year": "2025", "quarter": "Q2", "category": "Education", "icon": "🎓", "title": "QA Engineer Education Track", "date": "2025-06-12", "dateLabel": "12-Jun-2025", "points": 304 },
+  { "personId": "p5", "year": "2025", "quarter": "Q1", "category": "University Partnership", "icon": "🎓", "title": "University QA Bootcamp Mentor Session", "date": "2025-03-27", "dateLabel": "27-Mar-2025", "points": 26 },
+  { "personId": "p5", "year": "2025", "quarter": "Q4", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "QA Showcase Presentation", "date": "2025-12-02", "dateLabel": "02-Dec-2025", "points": 30 },
+
+  { "personId": "p6", "year": "2025", "quarter": "Q3", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Engineering Demo Practice", "date": "2025-08-22", "dateLabel": "22-Aug-2025", "points": 180 },
+  { "personId": "p6", "year": "2025", "quarter": "Q3", "category": "Education", "icon": "🎓", "title": "Software Quality Foundations", "date": "2025-07-29", "dateLabel": "29-Jul-2025", "points": 110 },
+  { "personId": "p6", "year": "2025", "quarter": "Q2", "category": "University Partnership", "icon": "🎓", "title": "Campus Engineering Knowledge Exchange", "date": "2025-06-03", "dateLabel": "03-Jun-2025", "points": 44 },
+  { "personId": "p6", "year": "2025", "quarter": "Q4", "category": "Public Speaking", "icon": "👨🏻‍🏫", "title": "Platform Engineering Roadmap Talk", "date": "2025-11-28", "dateLabel": "28-Nov-2025", "points": 36 }
+]

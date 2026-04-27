@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Green",
+    "date": "27/04/2026",
+    "likes": 1,
+    "text": "Great leaderboard update. Filtering by category will help a lot.",
+    "isMine": false,
+    "replies": []
+  },
+  {
+    "id": 2,
+    "name": "David Smith",
+    "date": "25/02/2026",
+    "likes": 1,
+    "text": "Can we add quarter filtering next?",
+    "isMine": true,
+    "replies": [
+      {
+        "id": 21,
+        "name": "Laura Reed",
+        "date": "26/02/2026",
+        "text": "Yes, that would be useful for review meetings."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Laura Reed",
+    "date": "20/02/2026",
+    "likes": 2,
+    "text": "Transparency is the best part of this leaderboard.",
+    "isMine": false,
+    "replies": []
+  }
+]
