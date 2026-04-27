@@ -2,8 +2,8 @@
   <article
     class="rank-row"
     :class="{
-      'hover:scale-[1.001]': !isExpanded,
-      'border-2 border-b-0 border-[#0ea5e9] shadow-[0_14px_28px_rgba(30,64,175,0.16)] rounded-b-none': isExpanded
+      'rank-row-collapsed': !isExpanded,
+      'rank-row-expanded': isExpanded
     }"
   >
     <div class="rank-number">{{ row.rank }}</div>
@@ -98,6 +98,7 @@
         v-for="(activity, index) in recentActivities"
         :key="activity.title + activity.date"
         class="activity-row"
+        :class="{ 'activity-row-first': index === 0 }"
         role="row"
       >
         <div class="activity-title">{{ activity.title }}</div>
@@ -126,6 +127,14 @@ defineEmits(['toggle']);
 <style scoped>
 .rank-row {
   @apply grid [grid-template-columns:44px_52px_minmax(200px,1.7fr)_minmax(160px,1fr)_auto_40px] max-[980px]:[grid-template-columns:38px_44px_1fr_40px] max-[980px]:[grid-template-rows:auto_auto_auto] items-center gap-4 max-[980px]:gap-x-3 max-[980px]:gap-y-0 bg-white border border-[#d6dee8] rounded-[14px] px-4 py-5 min-h-[94px] shadow-[0_2px_3px_rgba(15,23,42,0.07)] mb-[11px] hover:shadow-[1px_3px_7px_rgba(15,23,42,0.12)] transition-[box-shadow,border-color] duration-200;
+}
+
+.rank-row-collapsed {
+  @apply hover:scale-[1.001];
+}
+
+.rank-row-expanded {
+  @apply border-2 border-b-0 border-[#0ea5e9] shadow-[0_14px_28px_rgba(30,64,175,0.16)] rounded-b-none;
 }
 
 .rank-number {
@@ -221,15 +230,15 @@ defineEmits(['toggle']);
 }
 
 .expanded-panel {
-  @apply border-2 border-t-0 border-[#0ea5e9] rounded-b-2xl bg-[#f8fafc] shadow-[0_12px_24px_rgba(15,23,42,0.08)] px-4 pb-4 pt-3 max-[980px]:px-3 max-[980px]:pb-3 max-[980px]:pt-2 mt-[-12px] mb-[14px];
+  @apply border-2 border-t-0 border-[#0ea5e9] rounded-b-2xl bg-[#f8fafc] shadow-[0_12px_24px_rgba(15,23,42,0.08)] px-4 pb-4 pt-0.5 max-[980px]:px-3 max-[980px]:pb-3 max-[980px]:pt-0.5 mt-[-12px] mb-[14px];
 }
 
 .expanded-separator {
-  @apply -mx-4 max-[980px]:-mx-3 mb-3 border-t-2 border-[#edf1f7];
+  @apply -mx-4 max-[980px]:-mx-3 mb-2 border-t-2 border-[#edf1f7];
 }
 
 .expanded-title {
-  @apply mb-4 mt-3 ml-1 text-[#64748b] text-[0.75rem] tracking-[1px] font-bold;
+  @apply mb-4 mt-2 ml-1 text-[#64748b] text-[0.75rem] tracking-[1px] font-bold;
 }
 
 .activities-scroll {
@@ -237,11 +246,15 @@ defineEmits(['toggle']);
 }
 
 .activities-header {
-  @apply grid [grid-template-columns:minmax(0,3.6fr)_minmax(110px,0.9fr)_90px_70px] items-center gap-3 px-3 py-2.5 text-[#64748b] text-[0.75rem] tracking-[0.7px] font-bold border-b-2 border-[#cbd5e1] min-w-[600px];
+  @apply grid [grid-template-columns:minmax(0,3.6fr)_minmax(110px,0.9fr)_90px_70px] items-center gap-3 px-3 py-2.5 text-[#64748b] text-[0.75rem] tracking-[0.7px] font-bold border-b border-[#cbd5e1] min-w-[600px];
 }
 
 .activity-row {
-  @apply grid [grid-template-columns:minmax(0,3.6fr)_minmax(110px,0.9fr)_90px_70px] items-center gap-3 px-3 py-2.5 border-t-2 border-[#edf1f7] bg-slate-50 min-w-[600px];
+  @apply grid [grid-template-columns:minmax(0,3.6fr)_minmax(110px,0.9fr)_90px_70px] items-center gap-3 px-3 py-2.5 border-t border-[#edf1f7] bg-slate-50 min-w-[600px];
+}
+
+.activity-row-first {
+  @apply border-t-0;
 }
 
 .activity-title {
