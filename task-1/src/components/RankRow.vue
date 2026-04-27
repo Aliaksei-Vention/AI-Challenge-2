@@ -27,7 +27,7 @@
       <div class="achievements-list">
         <div
           v-for="item in row.achievements"
-          :key="item.icon + item.count"
+          :key="`${item.icon}-${item.category}-${item.count}`"
           class="achievement-item group"
         >
           <span class="achievement-icon">{{ item.icon }}</span>

@@ -28,7 +28,7 @@
         @update:modelValue="onFilterUpdate"
       />
       <Podium :performers="podiumPerformers" />
-      <RankList :rows="rankRows" :recent-activities="expandedRankActivities" />
+      <RankList :rows="rankRows" :recent-activities="filteredRecentActivities" />
     </section>
     <CommentsSection />
   </main>
@@ -108,10 +108,14 @@ const totalsByPerson = computed(() => {
     if (!entry) continue;
 
     entry.total += activity.points;
-    const prev = entry.achievements.get(activity.icon) || { count: 0, categories: new Set() };
+    const achievementKey = `${activity.icon}::${activity.category || 'Uncategorized'}`;
+    const prev = entry.achievements.get(achievementKey) || {
+      icon: activity.icon,
+      category: activity.category || 'Uncategorized',
+      count: 0,
+    };
     prev.count += 1;
-    if (activity.category) prev.categories.add(activity.category);
-    entry.achievements.set(activity.icon, prev);
+    entry.achievements.set(achievementKey, prev);
   }
 
   return map;
@@ -120,10 +124,10 @@ const totalsByPerson = computed(() => {
 const rankRows = computed(() => {
   const rows = visiblePeople.value.map((person) => {
     const stats = totalsByPerson.value.get(person.id) || { total: 0, achievements: new Map() };
-    const achievements = [...stats.achievements.entries()].map(([icon, { count, categories }]) => ({
+    const achievements = [...stats.achievements.values()].map(({ icon, count, category }) => ({
       icon,
       count,
-      category: [...categories].join(', '),
+      category,
     }));
 
     return {
@@ -183,14 +187,11 @@ const podiumPerformers = computed(() => {
   });
 });
 
-const expandedRankActivities = computed(() => {
-  if (!rankRows.value.length) return [];
-
-  const top = rankRows.value[0];
+const filteredRecentActivities = computed(() => {
   return filteredActivities.value
-    .filter((a) => a.personId === top.id)
     .sort((a, b) => b.date.localeCompare(a.date))
     .map((a) => ({
+      personId: a.personId,
       title: `[${a.category}] ${a.title}`,
       category: a.category,
       date: a.dateLabel,

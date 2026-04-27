@@ -5,7 +5,7 @@
         <RankRow
           :row="row"
           :isExpanded="isExpandedRow(row.rank)"
-          :recentActivities="recentActivities"
+          :recentActivities="getRecentActivitiesForRow(row)"
           @toggle="toggleRow"
         />
       </template>
@@ -17,7 +17,7 @@
 import { ref } from 'vue';
 import RankRow from './RankRow.vue';
 
-defineProps({
+const props = defineProps({
   rows: {
     type: Array,
     required: true,
@@ -35,6 +35,12 @@ const toggleRow = (rank) => {
 };
 
 const isExpandedRow = (rank) => expandedRank.value === rank;
+
+const getRecentActivitiesForRow = (row) => {
+  return (row?.id && Array.isArray(props.recentActivities))
+    ? props.recentActivities.filter((activity) => activity.personId === row.id)
+    : [];
+};
 </script>
 
 <style scoped>
