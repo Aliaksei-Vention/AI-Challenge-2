@@ -53,7 +53,7 @@
 
     <button
       class="expand-btn"
-      :class="{ 'bg-[#e0f2fe]': isExpanded }"
+      :class="{ 'expand-btn-expanded': isExpanded }"
       type="button"
       :aria-label="isExpanded ? 'Collapse row' : 'Expand row'"
       @click="$emit('toggle', row.rank)"
@@ -223,6 +223,10 @@ defineEmits(['toggle']);
 
 .expand-btn {
   @apply border-none bg-[#eef2f7] text-[#0ea5e9] cursor-pointer p-0 w-10 h-10 rounded-full grid place-items-center hover:bg-[#cbd5e1] transition-colors max-[980px]:row-start-3 max-[980px]:col-start-4 max-[980px]:justify-self-end max-[980px]:self-center max-[980px]:mb-1;
+}
+
+.expand-btn-expanded {
+  @apply bg-[#e0f2fe];
 }
 
 .expand-btn-icon {
