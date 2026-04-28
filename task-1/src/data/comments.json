@@ -14,7 +14,7 @@
     "date": "25/02/2026",
     "likes": 1,
     "text": "Can we add quarter filtering next?",
-    "isMine": true,
+    "isMine": false,
     "replies": [
       {
         "id": 21,
