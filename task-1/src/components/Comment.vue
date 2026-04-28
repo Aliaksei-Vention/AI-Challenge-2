@@ -20,7 +20,10 @@
             @keydown.enter="saveEdit"
           />
         </div>
-        <p v-else class="comment-text">{{ comment.text }}</p>
+        <p v-else class="comment-text">
+          {{ comment.text }}
+          <span v-if="comment.editedAt" class="comment-edited-inline"> - Edited {{ comment.editedAt }}</span>
+        </p>
       </div>
     </div>
 
@@ -74,13 +77,14 @@
           >
             ✕
           </button>
-          <input
+          <textarea
             v-model="replyText"
-            type="text"
             placeholder="Add a comment"
             class="reply-input"
-            @keydown.enter="sendReply"
-          />
+            rows="1"
+            @input="autoResizeTextarea"
+            @keydown.enter.prevent="sendReply"
+          ></textarea>
         </div>
         <div class="reply-actions">
           <button
@@ -118,6 +122,12 @@ const isEditing = ref(false);
 const editText = ref(props.comment.text || '');
 const showReplyInput = ref(false);
 const replyText = ref('');
+
+const autoResizeTextarea = (event) => {
+  const textarea = event.target;
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+};
 
 watch(
   () => props.comment.text,
@@ -194,7 +204,12 @@ const sendReply = () => {
 }
 
 .comment-text {
-  @apply mt-1 mb-0 text-gray-900 text-[0.85rem];
+  @apply mt-1 mb-0 text-gray-900 text-[0.85rem] break-words;
+  overflow-wrap: anywhere;
+}
+
+.comment-edited-inline {
+  @apply text-[0.75rem] text-[#9aa3b2] italic;
 }
 
 .comment-actions {
@@ -226,7 +241,7 @@ const sendReply = () => {
 }
 
 .reply-input {
-  @apply w-full border-none outline-none text-[0.82rem] leading-5 text-gray-900 placeholder:text-gray-400 pr-5 bg-transparent;
+  @apply w-full border-none outline-none text-[0.82rem] leading-5 text-gray-900 placeholder:text-gray-400 pr-5 bg-transparent resize-none overflow-hidden;
 }
 
 .reply-actions {
@@ -254,6 +269,7 @@ const sendReply = () => {
 }
 
 .reply-text {
-  @apply text-[0.82rem] text-gray-600;
+  @apply text-[0.82rem] text-gray-600 break-words;
+  overflow-wrap: anywhere;
 }
 </style>

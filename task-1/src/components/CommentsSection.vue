@@ -22,15 +22,16 @@
             ✕
           </button>
 
-          <input
+          <textarea
             v-model="newCommentText"
             class="composer-input"
             :class="isComposerActive ? 'pr-6' : ''"
-            type="text"
             placeholder="Add a comment"
+            rows="1"
             @focus="isComposerActive = true"
-            @keydown.enter="submitComment"
-          />
+            @input="autoResizeTextarea"
+            @keydown.enter.prevent="submitComment"
+          ></textarea>
         </div>
 
         <div v-if="isComposerActive" class="composer-actions">
@@ -114,6 +115,12 @@ const newCommentText = ref('');
 const isComposerActive = ref(false);
 const tabDropdownOpen = ref(false);
 
+const autoResizeTextarea = (event) => {
+  const textarea = event.target;
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+};
+
 const parseCommentDate = (value) => {
   const trimmed = String(value || '').trim();
 
@@ -135,6 +142,7 @@ const comments = ref(
     ...c,
     likedByMe: false,
     replies: c.replies || [],
+    editedAt: c.editedAt || null,
     createdAt: parseCommentDate(c.date),
   })),
 );
@@ -197,6 +205,7 @@ const saveEdit = ({ id, text }) => {
   const target = comments.value.find((c) => c.id === id && c.isMine);
   if (!target) return;
   target.text = text;
+  target.editedAt = new Date().toLocaleDateString('en-GB');
 };
 
 const addReply = ({ id, text }) => {
@@ -242,7 +251,8 @@ const addReply = ({ id, text }) => {
 }
 
 .composer-input {
-  @apply w-full h-5 border-none outline-none font-[inherit] text-[0.92rem] leading-5 text-gray-900 placeholder:text-gray-400 bg-transparent;
+  @apply w-full border-none outline-none font-[inherit] text-[0.92rem] leading-5 text-gray-900 placeholder:text-gray-400 bg-transparent resize-none overflow-hidden;
+  overflow-wrap: anywhere;
 }
 
 .composer-actions {
