@@ -39,7 +39,8 @@
         class="score-pill"
         :class="p.scoreClass"
       >
-        <span class="leading-none" :class="p.starClass">★</span>{{ p.score }}
+        <span class="leading-none" :class="p.starClass">★</span>
+        <span :class="p.starClass">{{ p.score }}</span>
       </div>
 
       <div
