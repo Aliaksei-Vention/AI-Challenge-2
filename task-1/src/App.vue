@@ -4,7 +4,7 @@
       class="w-[min(1205px,100%)] mx-auto mt-2 mb-16 text-left text-[#0d1320] text-[36px] font-bold tracking-[0.2px]"
       style="font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;"
     >
-      Company Leader Board 2025
+      Exactly not a leaderboard
     </h1>
     <section class="w-[min(1205px,100%)] mx-auto p-[26px] bg-[#f8fafc]">
       <header>
@@ -12,13 +12,13 @@
           class="m-0 text-gray-900 text-[30px] font-bold"
           style="font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;"
         >
-          Leaderboard
+          No way it is a leaderboard
         </h2>
         <p
           class="mt-2 mb-5 text-[#64748b] text-[14px] font-normal"
           style="font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;"
         >
-          Top performers based on contributions and activity
+          Not top people
         </p>
       </header>
 
